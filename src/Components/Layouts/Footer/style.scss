@@ -1,0 +1,101 @@
+$nav-link: #ffffff;
+$header-logo: #00296b;
+
+@mixin flexBox(
+  $flex: flex,
+  $jc: flex-start,
+  $ai: flex-start,
+  $gap: 0px,
+  $flexFlow: nowrap row
+) {
+  gap: $gap;
+  display: $flex;
+  align-items: $ai;
+  flex-flow: $flexFlow;
+  justify-content: $jc;
+}
+
+.footer {
+  padding: 60px 0px;
+  text-align: center;
+  background-color: $header-logo;
+
+  &__container {
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    @include flexBox(flex, space-between, flex-start, 40px, row nowrap);
+  }
+
+  &__item {
+    &-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: $nav-link;
+      line-height: 100%;
+      letter-spacing: 0%;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__navigations {
+    @include flexBox(flex, flex-start, center, 36px, column nowrap);
+  }
+
+  &__navigation {
+    &-link {
+      font-size: 16px;
+      color: $nav-link;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: 0%;
+      transition: opacity 150ms linear;
+      -o-transition: opacity 150ms linear;
+      -ms-transition: opacity 150ms linear;
+      -moz-transition: opacity 150ms linear;
+      -webkit-transition: opacity 150ms linear;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &-horizontal-rule {
+    height: 2px;
+    margin-bottom: 50px;
+    background-color: $nav-link;
+  }
+
+  &__medias {
+    @include flexBox(flex, center, center, 70px, row nowrap);
+  }
+
+  &__media {
+    &-image {
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+      border-radius: 50%;
+      -o-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      transition: transform 150ms linear;
+      -o-transition: transform 150ms linear;
+      -ms-transition: transform 150ms linear;
+      -moz-transition: transform 150ms linear;
+      -webkit-transition: transform 150ms linear;
+
+      &:hover {
+        transform: scale(1.2);
+        -o-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+      }
+    }
+  }
+}

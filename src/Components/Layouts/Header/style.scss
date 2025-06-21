@@ -1,0 +1,60 @@
+$nav-link: #ffffff;
+$header-logo: #00296b;
+
+@mixin flexBox(
+  $flex: flex,
+  $jc: flex-start,
+  $ai: flex-start,
+  $gap: 0px,
+  $flexFlow: nowrap row
+) {
+  gap: $gap;
+  display: $flex;
+  align-items: $ai;
+  flex-flow: $flexFlow;
+  justify-content: $jc;
+}
+
+.header {
+  top: 0;
+  position: sticky;
+  padding: 35px 0px;
+  background-color: $header-logo;
+
+  &__container {
+    @include flexBox(flex, space-between, center);
+  }
+
+  &-login {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0%;
+    padding: 10px 40px;
+    border-radius: 6px;
+    color: $header-logo;
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -moz-border-radius: 6px;
+    text-transform: uppercase;
+    -webkit-border-radius: 6px;
+    background-color: $nav-link;
+  }
+}
+
+.nav {
+  &__list {
+    width: 100%;
+    @include flexBox(flex, flex-start, center, 50px, row nowrap);
+  }
+
+  &__item {
+    &-link {
+      font-size: 24px;
+      color: $nav-link;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: -2%;
+    }
+  }
+}
