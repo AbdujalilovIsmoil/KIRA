@@ -1,3 +1,5 @@
+import "swiper/css";
+import "swiper/css/pagination";
 import { Suspense } from "react";
 import routes from "Layout/Routes";
 import { Loader } from "Components";

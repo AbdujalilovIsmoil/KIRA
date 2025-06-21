@@ -1,0 +1,95 @@
+$nav-link: #ffffff;
+$header-logo: #00296b;
+$possibility-title: #000000;
+
+@mixin flexBox(
+  $flex: flex,
+  $jc: flex-start,
+  $ai: flex-start,
+  $gap: 0px,
+  $flexFlow: nowrap row
+) {
+  gap: $gap;
+  display: $flex;
+  align-items: $ai;
+  flex-flow: $flexFlow;
+  justify-content: $jc;
+}
+
+.possibility {
+  position: relative;
+  margin-bottom: 50px;
+
+  &__pagination-dot-list {
+    margin-top: 70px;
+    @include flexBox(flex, center, center, 0px, row nowrap);
+  }
+
+  &__box {
+    @include flexBox(flex, space-between, center, 40px, row nowrap);
+
+    &img {
+      width: 590px;
+      height: 435px;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    &-title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 100%;
+      letter-spacing: -2%;
+      margin-bottom: 25px;
+      color: $possibility-title;
+    }
+
+    &-description {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: -2%;
+      margin-bottom: 25px;
+      color: $possibility-title;
+    }
+
+    &-link {
+      font-size: 16px;
+      color: $nav-link;
+      font-weight: 400;
+      padding: 10px 40px;
+      border-radius: 6px;
+      letter-spacing: -2%;
+      display: inline-block;
+      -o-border-radius: 6px;
+      -ms-border-radius: 6px;
+      -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      background-color: $header-logo;
+      border: 1px solid $header-logo;
+      transition: color 150ms linear, background-color 150ms linear;
+      -o-transition: color 150ms linear, background-color 150ms linear;
+      -ms-transition: color 150ms linear, background-color 150ms linear;
+      -moz-transition: color 150ms linear, background-color 150ms linear;
+      -webkit-transition: color 150ms linear, background-color 150ms linear;
+
+      &:hover {
+        color: $header-logo;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 1px solid $header-logo !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $header-logo;
+}

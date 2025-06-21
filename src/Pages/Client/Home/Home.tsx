@@ -1,5 +1,5 @@
 import "./style.scss";
-import { Banner, Hero, Payment, Services } from "./Components";
+import { Banner, Hero, Payment, Possibility, Services } from "./Components";
 
 const Home = () => {
   return (
@@ -7,6 +7,7 @@ const Home = () => {
       <Hero />
       <Services />
       <Banner />
+      <Possibility />
       <Payment />
     </>
   );

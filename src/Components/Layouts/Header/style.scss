@@ -17,6 +17,7 @@ $header-logo: #00296b;
 
 .header {
   top: 0;
+  z-index: 2;
   position: sticky;
   padding: 35px 0px;
   background-color: $header-logo;
