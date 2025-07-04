@@ -1,6 +1,6 @@
 import "./style.scss";
-import { useEffect, useState } from "react";
 import { Button, Input } from "Components";
+import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import { FaTimes } from "Assets/React-icons";
 import { Link, NavLink } from "react-router-dom";
