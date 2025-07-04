@@ -1,0 +1,194 @@
+$nav-link: #ffffff;
+$gray-color: #3d3d3d;
+$header-logo: #00296b;
+$account-text-color: #727272;
+$account-border-color: #eaeaea;
+$border-color: rgb(202, 202, 202);
+
+@mixin flexBox(
+  $flex: flex,
+  $jc: flex-start,
+  $ai: flex-start,
+  $gap: 0px,
+  $flexFlow: nowrap row
+) {
+  gap: $gap;
+  display: $flex;
+  align-items: $ai;
+  flex-flow: $flexFlow;
+  justify-content: $jc;
+}
+
+@mixin login-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 8px;
+  font-weight: bold;
+  letter-spacing: 0%;
+}
+
+.login-background {
+  width: 100%;
+  min-height: 100vh;
+  @include flexBox(flex, center, center, 0px, row nowrap);
+
+  &__container {
+    max-width: 300px;
+    text-align: center;
+  }
+
+  &-light {
+    position: relative;
+    padding: 50px 100px;
+
+    background-color: $nav-link;
+  }
+
+  &__btn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    &-close {
+      top: 10px;
+      right: 10px;
+      font-size: 25px;
+      position: absolute;
+    }
+  }
+
+  &__navigations {
+    margin-bottom: 50px;
+    @include flexBox(flex, center, center, 30px, row nowrap);
+  }
+
+  &__navigation {
+    position: relative;
+
+    &:first-child::after {
+      width: 1px;
+      content: "";
+      height: 100%;
+      right: -15px;
+      position: absolute;
+      background-color: $gray-color;
+    }
+
+    &-link {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0%;
+      color: $gray-color;
+
+      &--active {
+        color: $header-logo;
+      }
+    }
+  }
+
+  .login__form {
+    &-description {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0%;
+      color: $gray-color;
+      margin-bottom: 15px;
+    }
+
+    &-or-description {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 16px;
+      color: $gray-color;
+      letter-spacing: 0%;
+      margin-bottom: 30px;
+    }
+
+    .form {
+      &__group {
+        margin-bottom: 16px;
+        &-input {
+          width: 100%;
+          padding: 10px;
+          outline: none;
+          border-radius: 5px;
+          -o-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -webkit-border-radius: 5px;
+          border: 1px solid $border-color;
+        }
+
+        &-forgot {
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 16px;
+          letter-spacing: 0%;
+          color: $header-logo;
+        }
+
+        &-links {
+          text-align: right;
+          margin-bottom: 30px;
+        }
+
+        &-submit {
+          color: $nav-link;
+          @include login-btn;
+          border-radius: 5px;
+          margin-bottom: 45px;
+          -o-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -webkit-border-radius: 5px;
+          background-color: $header-logo;
+          border: 1px solid $header-logo;
+          transition: color 150ms linear, background-color 150ms linear;
+          -o-transition: color 150ms linear, background-color 150ms linear;
+          -ms-transition: color 150ms linear, background-color 150ms linear;
+          -moz-transition: color 150ms linear, background-color 150ms linear;
+          -webkit-transition: color 150ms linear, background-color 150ms linear;
+
+          &:hover {
+            color: $header-logo;
+            background-color: $nav-link;
+          }
+        }
+      }
+    }
+  }
+
+  .login {
+    &__media {
+      margin-bottom: 15px;
+    }
+
+    &__btn {
+      @include login-btn;
+      border-radius: 5px;
+      -o-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      background-color: $nav-link;
+      border: 1px solid $account-border-color;
+      @include flexBox(flex, center, center, 10px, row nowrap);
+
+      &-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      &-text {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: 0%;
+        color: $account-text-color;
+      }
+    }
+  }
+}
